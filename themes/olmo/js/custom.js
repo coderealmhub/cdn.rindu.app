@@ -171,7 +171,7 @@
 					patterns: {
 						youtube: {			   
 							index: 'youtube.com',
-							src: 'https://www.youtube.com/embed/7e90gBu4pas'				
+							src: 'https://www.youtube.com/embed/ovpXBAxZ-Eo'				
 								}
 							}
 						}		  		  
