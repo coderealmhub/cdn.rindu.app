@@ -4464,8 +4464,8 @@ h2.statistic-number {
 
 .review-1-txt,
 .review-2-txt {
-  width: 150px;
-  height: 300px;
+  width: 100%;
+  height: auto;
  
   display: inline-block!important;
   padding-left: 8px;
