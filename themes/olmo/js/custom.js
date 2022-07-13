@@ -154,7 +154,7 @@
 					patterns: {
 						youtube: {			   
 							index: 'youtube.com',
-							src: 'https://www.youtube.com/embed/SZEflIVnhH8'				
+							src: 'https://www.youtube.com/embed/ovpXBAxZ-Eo'				
 								}
 							}
 						}		  		  
@@ -188,7 +188,7 @@
 					patterns: {
 						youtube: {			   
 							index: 'youtube.com',
-							src: 'https://www.youtube.com/embed/0gv7OC9L2s8'					
+							src: 'https://www.youtube.com/embed/ovpXBAxZ-Eo'					
 								}
 							}
 						}		  		  
