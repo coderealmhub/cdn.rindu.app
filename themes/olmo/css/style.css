@@ -4400,7 +4400,7 @@ h2.statistic-number {
   -webkit-box-shadow: 0px 10px 15px 0px rgba(5, 5, 5, .05);
   -moz-box-shadow: 0px 10px 15px 0px rgba(5, 5, 5, .05);
   box-shadow: 0px 10px 15px 0px rgba(5, 5, 5, .05);
-  width: 100%;
+  width: 50%;
   height: auto;
 }
 
@@ -4468,7 +4468,6 @@ h2.statistic-number {
 .review-2-txt {
   width: 100%;
   height: auto;
- 
   display: inline-block!important;
   padding-left: 8px;
 }
