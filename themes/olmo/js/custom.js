@@ -188,7 +188,7 @@
 					patterns: {
 						youtube: {			   
 							index: 'youtube.com',
-							src: 'https://www.youtube.com/embed/ovpXBAxZ-Eo'					
+							src: 'https://www.youtube.com/embed/3oNGXC7w-lo'					
 								}
 							}
 						}		  		  
