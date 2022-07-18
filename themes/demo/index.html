@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html data-blockbyte-bs-uid="100162">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <meta content="MobileDemo" name="Demo">
+
+    <title>Mobile App Template</title>
+    <script src="./assets/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript">
+        function check_width() {
+            var width = window.innerWidth;
+            console.log(width);
+            if (width < 768) {
+                window.location.replace("https://minhaindustria.realm.com.br/");
+            }
+        }
+        $(document).ready(function() {
+            check_width();
+        });
+        $(window).resize(function() {
+            check_width();
+        });
+    </script>
+    <style type="text/css">
+        @media (min-width: 768px) {
+            .mobile-view {
+                display: none;
+            }
+            .desktop-view {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-view {
+                display: block;
+            }
+            .desktop-view {
+                display: none;
+            }
+        }
+        
+        .preview-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            overflow: hidden;
+        }
+        
+        .iframe-wrap {
+            width: 375px;
+            height: 667px;
+            display: inline-block;
+            border: 6px solid #333;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 2px 4px 4px rgba(33, 33, 33, .3);
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .qr {
+            position: absolute;
+            width: 200px;
+            height: auto;
+            display: inline-block;
+            top: 200px;
+            left: 13%;
+            text-align: center;
+            vertical-align: top;
+        }
+        
+        .qr img {
+            width: 200px;
+            height: 200px;
+            vertical-align: top;
+        }
+        
+        .qr span {
+            font-size: 22px;
+            line-height: 36px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            display: block;
+            vertical-align: top;
+            margin-top: -5px;
+        }
+        
+        @media (min-width: 768px) {
+            .qr {
+                width: 150px;
+                left: 4%;
+            }
+            .qr img {
+                width: 150px;
+                height: 150px;
+            }
+            .qr span {
+                font-size: 20px;
+                line-height: 32px;
+            }
+        }
+        
+        @media (min-width: 990px) {
+            .qr {
+                width: 200px;
+                left: 10%;
+            }
+            .qr img {
+                width: 200px;
+                height: 200px;
+            }
+            .qr span {
+                font-size: 22px;
+                line-height: 36px;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .qr {
+                left: 13%;
+            }
+        }
+    </style>
+
+    <style data-styled="" data-styled-version="4.4.0"></style>
+    <style type="text/css">
+        .backpack.dropzone {
+            font-family: 'SF UI Display', 'Segoe UI';
+            font-size: 15px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 250px;
+            height: 150px;
+            font-weight: lighter;
+            color: white;
+            will-change: right;
+            z-index: 2147483647;
+            bottom: 20%;
+            background: #333;
+            position: fixed;
+            user-select: none;
+            transition: left .5s, right .5s;
+            right: 0px;
+        }
+        
+        .backpack.dropzone .animation {
+            height: 80px;
+            width: 250px;
+            background: url("chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/assets/backpack/dropzone/hoverstate.png") left center;
+        }
+        
+        .backpack.dropzone .title::before {
+            content: 'Save to';
+        }
+        
+        .backpack.dropzone.closed {
+            right: -250px;
+        }
+        
+        .backpack.dropzone.hover .animation {
+            animation: sxt-play-anim-hover 0.91s steps(21);
+            animation-fill-mode: forwards;
+            background: url("chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/assets/backpack/dropzone/hoverstate.png") left center;
+        }
+        
+        @keyframes sxt-play-anim-hover {
+            from {
+                background-position: 0px;
+            }
+            to {
+                background-position: -5250px;
+            }
+        }
+        
+        .backpack.dropzone.saving .title::before {
+            content: 'Saving to';
+        }
+        
+        .backpack.dropzone.saving .animation {
+            background: url("chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/assets/backpack/dropzone/saving_loop.png") left center;
+            animation: sxt-play-anim-saving steps(59) 2.46s infinite;
+        }
+        
+        @keyframes sxt-play-anim-saving {
+            100% {
+                background-position: -14750px;
+            }
+        }
+        
+        .backpack.dropzone.saved .title::before {
+            content: 'Saved to';
+        }
+        
+        .backpack.dropzone.saved .animation {
+            background: url("chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/assets/backpack/dropzone/saved.png") left center;
+            animation: sxt-play-anim-saved steps(20) 0.83s forwards;
+        }
+        
+        @keyframes sxt-play-anim-saved {
+            100% {
+                background-position: -5000px;
+            }
+        }
+    </style>
+    <style class="blockbyte-bs-style" data-name="content">
+        body>div#blockbyte-bs-indicator>div {
+            opacity: 0;
+            pointer-events: none
+        }
+        
+        body>iframe#blockbyte-bs-sidebar.blockbyte-bs-visible,
+        body>iframe#blockbyte-bs-overlay.blockbyte-bs-visible {
+            opacity: 1;
+            pointer-events: auto
+        }
+        
+        body.blockbyte-bs-noscroll {
+            overflow: hidden !important
+        }
+        
+        body>div#blockbyte-bs-indicator>div {
+            position: absolute;
+            transform: translate3d(-40px, 0, 0);
+            top: 0;
+            left: 0;
+            width: 40px !important;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 0 10px 10px 0;
+            transition: opacity 0.3s, transform 0.3s;
+            z-index: 2
+        }
+        
+        body>div#blockbyte-bs-indicator>div>span {
+            -webkit-mask: no-repeat center/32px;
+            -webkit-mask-image: url(chrome-extension://jdbnofccmhefkmjbkkdkfiicjkgofkdh/img/icon-bookmark.svg);
+            background-color: #ffffff;
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%
+        }
+        
+        body>div#blockbyte-bs-indicator[data-pos='right'] {
+            left: auto;
+            right: 0
+        }
+        
+        body>div#blockbyte-bs-indicator[data-pos='right']>div {
+            transform: translate3d(40px, 0, 0);
+            left: auto;
+            right: 0;
+            border-radius: 10px 0 0 10px
+        }
+        
+        body>div#blockbyte-bs-indicator.blockbyte-bs-fullHeight>div {
+            border-radius: 0
+        }
+        
+        body>div#blockbyte-bs-indicator.blockbyte-bs-hover>div {
+            transform: translate3d(0, 0, 0);
+            opacity: 1
+        }
+        
+        body>div#blockbyte-bs-indicator[data-pos='left'].blockbyte-bs-has-lsb {
+            height: 100% !important;
+            top: 0 !important
+        }
+        
+        body>div#blockbyte-bs-indicator[data-pos='left'].blockbyte-bs-has-lsb>div {
+            background: transparent
+        }
+        
+        body>div#blockbyte-bs-indicator[data-pos='left'].blockbyte-bs-has-lsb>div>span {
+            -webkit-mask-position-y: 20px
+        }
+        
+        body>iframe#blockbyte-bs-sidebar {
+            width: 350px;
+            max-width: none;
+            height: 0;
+            z-index: 2147483646;
+            background-color: rgba(0, 0, 0, 0.6) !important;
+            speak: none;
+            border: none;
+            display: block !important;
+            transform: translate3d(-350px, 0, 0);
+            transition: width 0s 0.3s, height 0s 0.3s, opacity 0.3s, transform 0.3s
+        }
+        
+        body>iframe#blockbyte-bs-sidebar[data-pos='right'] {
+            left: auto;
+            right: 0;
+            transform: translate3d(350px, 0, 0)
+        }
+        
+        body>iframe#blockbyte-bs-sidebar.blockbyte-bs-visible {
+            width: calc(100% + 350px);
+            height: 100%;
+            transform: translate3d(0, 0, 0);
+            transition: opacity 0.3s, transform 0.3s
+        }
+        
+        body>iframe#blockbyte-bs-sidebar.blockbyte-bs-hideMask {
+            background: none !important
+        }
+        
+        body>iframe#blockbyte-bs-sidebar.blockbyte-bs-hideMask:not(.blockbyte-bs-hover) {
+            width: calc(350px + 50px)
+        }
+        
+        body>iframe#blockbyte-bs-overlay {
+            width: 100%;
+            max-width: none;
+            height: 100%;
+            z-index: 2147483647;
+            border: none;
+            speak: none;
+            background: rgba(0, 0, 0, 0.5) !important;
+            transition: opacity 0.3s
+        }
+    </style>
+</head>
+
+<body cz-shortcut-listen="true">
+
+    <div class="desktop-view">
+        <div class="iframe-wrap">
+            <iframe class="preview-frame" src="https://minhaindustria.realm.com.br"></iframe>
+        </div>
+        <div class="qr">
+            <img src="./assets/qrcode.png"><span><br>Leia este código para visualizar no dispositivo móvel</span>
+        </div>
+    </div>
+
+    <iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;" src="./assets/saved_resource(1).html"></iframe>
+    <div id="GOOGLE_INPUT_CHEXT_FLAG" input="" input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}" style="display: none;"></div>
+    <iframe id="blockbyte-bs-sidebar" class="notranslate" aria-hidden="true" data-pos="left" src="./assets/saved_resource(2).html"></iframe>
+    <div id="blockbyte-bs-indicator" class="blockbyte-bs-fullHeight" style="width: 20px; height: 100%; top: 0%;"></div>
+</body>
+<additor-crx id="additor-crx-base"></additor-crx>
+
+</html>
